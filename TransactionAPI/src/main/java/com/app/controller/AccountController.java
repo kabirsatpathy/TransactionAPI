@@ -32,7 +32,7 @@ public class AccountController {
 	// Transfer money between accounts
 	@PostMapping("/transfer")
 	public String transferMoney(@RequestParam(name = "fromAccountId") String fromAccountId,
-			@RequestParam(name = "toAccountId") String toAccountId, @RequestParam double amount) {
+			@RequestParam(name = "toAccountId") String toAccountId, @RequestParam (name ="amount") double amount) {
 		accountService.transfer(fromAccountId, toAccountId, amount);
 		return "Transfer successful!";
 	}
